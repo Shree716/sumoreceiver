@@ -28,12 +28,11 @@ radio.onReceivedValue(function (name, value) {
         action = "F"
     }
 })
-let strip: neopixel.Strip = null
 let action = ""
 let yValue = 0
 let xValue = 0
 comment.comment("CHANGE THE RADIO GROUP TO YOUR TEAM'S JOYSTICK NUMBER")
-radio.setGroup(13)
+radio.setGroup(48)
 basic.showIcon(IconNames.Yes)
 basic.showString("R")
 basic.forever(function () {
@@ -65,10 +64,6 @@ basic.forever(function () {
         action = "Z"
     } else if (action == "F") {
         comment.comment("Insert F-Button Action Between These Comments")
-        wuKong.setLightMode(wuKong.LightMode.BREATH)
-        strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
-        wuKong.lightIntensity(100)
         comment.comment("Insert F-Button Action Between These Comments")
         action = "Z"
     } else {
