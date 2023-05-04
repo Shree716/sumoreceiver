@@ -28,7 +28,6 @@ radio.onReceivedValue(function (name, value) {
         action = "F"
     }
 })
-let strip: neopixel.Strip = null
 let action = ""
 let yValue = 0
 let xValue = 0
@@ -40,9 +39,6 @@ basic.forever(function () {
     if (action == "A") {
         comment.comment("Insert A-Button Action Between These Comments")
         wuKong.setLightMode(wuKong.LightMode.BREATH)
-        strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
-        strip = strip.range(0, 4)
-        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
         comment.comment("Insert A-Button Action Between These Comments")
         action = "Z"
     } else if (action == "B") {
