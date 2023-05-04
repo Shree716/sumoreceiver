@@ -41,8 +41,8 @@ basic.forever(function () {
         comment.comment("Insert A-Button Action Between These Comments")
         wuKong.setLightMode(wuKong.LightMode.BREATH)
         strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
-        strip.showColor(neopixel.colors(NeoPixelColors.Purple))
-        strip.show()
+        strip = strip.range(0, 4)
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
         comment.comment("Insert A-Button Action Between These Comments")
         action = "Z"
     } else if (action == "B") {
