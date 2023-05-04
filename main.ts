@@ -28,6 +28,7 @@ radio.onReceivedValue(function (name, value) {
         action = "F"
     }
 })
+let strip: neopixel.Strip = null
 let action = ""
 let yValue = 0
 let xValue = 0
@@ -38,14 +39,22 @@ basic.showString("R")
 basic.forever(function () {
     if (action == "A") {
         comment.comment("Insert A-Button Action Between These Comments")
+        wuKong.setLightMode(wuKong.LightMode.BREATH)
+        strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
+        strip.showColor(neopixel.colors(NeoPixelColors.Purple))
+        strip.show()
         comment.comment("Insert A-Button Action Between These Comments")
         action = "Z"
     } else if (action == "B") {
         comment.comment("Insert B-Button Action Between These Comments")
+        for (let index = 0; index < 3; index++) {
+            music.playMelody("A F E F D G E F ", 200)
+        }
         comment.comment("Insert B-Button Action Between These Comments")
         action = "Z"
     } else if (action == "AB") {
         comment.comment("Insert A/B-Button Action Between These Comments")
+        wuKong.stopAllMotor()
         comment.comment("Insert A/B-Button Action Between These Comments")
         action = "Z"
     } else if (action == "C") {
